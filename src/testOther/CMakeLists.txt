@@ -9,6 +9,6 @@ message(STATUS "in testOther CXXFLAG :" ${CMAKE_CXX_FLAGS})
 
 ADD_EXECUTABLE(testOther ${TESTOTHER_SRC})
 TARGET_LINK_LIBRARIES(testOther libgtest.a libgmock.a libutils.a)
-TARGET_LINK_LIBRARIES(testOther folly z ssl crypto event glog gflags iberty pthread double-conversion boost_system boost_thread boost_filesystem boost_regex boost_program_options dl m)
+TARGET_LINK_LIBRARIES(testOther z ssl crypto  pthread boost_system boost_thread boost_filesystem boost_regex boost_program_options dl m)
 
 INSTALL(TARGETS testOther RUNTIME DESTINATION bin)

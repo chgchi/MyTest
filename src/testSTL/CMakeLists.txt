@@ -10,7 +10,8 @@ LINK_DIRECTORIES(${PROJECT_BINARY_DIR}/libout/utils)
 
 ADD_EXECUTABLE(testSTL ${TESTSTL_SRC})
 TARGET_LINK_LIBRARIES(testSTL libgtest.a libgmock.a libutils.a)
-TARGET_LINK_LIBRARIES(testSTL folly z ssl crypto event glog gflags iberty pthread double-conversion boost_system boost_thread boost_filesystem boost_regex boost_program_options dl m)
+#TARGET_LINK_LIBRARIES(testSTL folly z ssl crypto event glog gflags iberty pthread double-conversion boost_system boost_thread boost_filesystem boost_regex boost_program_options dl m)
+TARGET_LINK_LIBRARIES(testSTL z ssl crypto event pthread boost_system boost_thread boost_filesystem boost_regex boost_program_options dl m)
 
 INSTALL(TARGETS testSTL RUNTIME DESTINATION bin)
 

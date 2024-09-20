@@ -177,9 +177,9 @@ int MakeHeap(int heap[], int n) {
  heap : 需要排序的堆
  n    : 堆的大小
  输出参数 :
- 0
+ void
  */
-int HeapSort(int heap[], int n) {
+void HeapSort(int heap[], int n) {
     int i = 0;
     int temp = 0;
 

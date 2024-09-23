@@ -16,6 +16,7 @@ std::stringstream stream;
 
 void append_number(int x) {
     while (lock_stream.test_and_set()) {
+        std::cout<<"thread " << x <<" wait the flag!!!" << std::endl;
     } //检查并设置是个原子操作，如以前没有设置过则退出循环，每个线程都等待前面一个线程将lock_stream状态清除后跳出循环
 
     stream << "thread #" << x << '\n';

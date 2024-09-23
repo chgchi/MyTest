@@ -11,7 +11,7 @@
 #include <numeric>
 #include "stdAlgorithmTest.h"
 
-// ./MyTest --gtest_filter=stdAlgorithmTest.*
+// ./testSTL --gtest_filter=stdAlgorithmTest.*
 
 void stdAlgorithmTest::SetUpTestCase() {
 

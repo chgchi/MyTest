@@ -22,16 +22,16 @@ void boostOptionalTest::TearDownTestCase() {
 }
 
 TEST_F (boostOptionalTest, test1) {
-    optional<int> op0;  //一个未初始化的optional对象
-    optional<int> op1(none);  //同上，使用none赋予未初始化值
+    boost::optional<int> op0;  //一个未初始化的optional对象
+    boost::optional<int> op1(none);  //同上，使用none赋予未初始化值
     EXPECT_TRUE(!op0);
     EXPECT_TRUE(op0 == op1);
     EXPECT_TRUE(op1.get_value_or(253) == 253); //获取可选值
-    optional<string> ops("test");  //初始化为字符串test
+    boost::optional<string> ops("test");  //初始化为字符串test
     string str = *ops;     //用解引用操作符获取值
     cout << str.c_str() << endl;
     vector<int> v(10);
-    optional<vector<int>&> opv(v);  //容纳一个容器的引用
+    boost::optional<vector<int>&> opv(v);  //容纳一个容器的引用
     EXPECT_TRUE(opv != none);
     opv->push_back(5);     //使用箭头操作符操纵容器
     EXPECT_TRUE(opv->size() == 11);
@@ -40,16 +40,16 @@ TEST_F (boostOptionalTest, test1) {
 }
 
 //计算倒数
-optional<double> calc(int x) {
-    return optional<double>(x != 0, 1.0 / x);     //条件构造函数
+boost::optional<double> calc(int x) {
+    return boost::optional<double>(x != 0, 1.0 / x);     //条件构造函数
 }
 //计算实数的平方根
-optional<double> sqrt_op(double x) {
-    return optional<double>(x > 0, sqrt(x));   //条件构造函数
+boost::optional<double> sqrt_op(double x) {
+    return boost::optional<double>(x > 0, sqrt(x));   //条件构造函数
 }
 
 TEST_F (boostOptionalTest, test2) {
-    optional<double> d = calc(10);
+    boost::optional<double> d = calc(10);
     if (d)
         cout << *d << endl;
     d = sqrt_op(-10);
@@ -58,7 +58,7 @@ TEST_F (boostOptionalTest, test2) {
 }
 
 TEST_F (boostOptionalTest, test3) {
-    auto x = make_optional(5);
+    auto x = boost::make_optional(5);
     EXPECT_TRUE(*x == 5);
     auto y = make_optional<double>((*x > 10), 1.0);
     EXPECT_TRUE(!y);

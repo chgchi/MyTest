@@ -9,12 +9,12 @@
 #define UT_STDALGORITHMTEST_H_
 #include <gtest/gtest.h>
 
-class stdAlgorithmTest:public testing::Test {
+class stdAlgorithmTest : public testing::Test
+{
 public:
 	static void SetUpTestCase();
 
 	static void TearDownTestCase();
 };
-
 
 #endif /* UT_STDALGORITHMTEST_H_ */
